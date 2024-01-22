@@ -1,9 +1,9 @@
 <script setup>
-import BasicsOne from './components/BasicsOne.vue'
+import Basics from './components/Basics.vue'
 </script>
 
 <template>
-  <BasicsOne />
+   <Basics />
 </template>
 
 <style scoped></style>
