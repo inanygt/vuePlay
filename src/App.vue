@@ -4,6 +4,7 @@ import Basics from './components/Basics.vue'
 
 <template>
    <Basics />
+   <div class="firstTeleport"></div>
 </template>
 
 <style scoped></style>

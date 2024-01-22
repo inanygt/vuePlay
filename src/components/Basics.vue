@@ -4,7 +4,7 @@
       <div v-if="showBooks">
          <h3>{{ title }} - {{ age }}</h3>
       </div>
-      <button @click="age++">Increase age</button>
+      <button class="bg-red-300 p-3 rounded-xl" @click="age++">Increase age</button>
       <br />
       <br />
       <button @click="toggleBooks">
@@ -105,6 +105,11 @@
             <a href="#">Sign up</a>
          </template>
       </Card>
+
+      <!-- TELEPORTING -->
+      <teleport to=".firstTeleport">
+         <h1>This is my first teleport</h1>
+      </teleport>
    </div>
 </template>
 
