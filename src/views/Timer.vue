@@ -10,9 +10,11 @@
          v-if="isPlaying"
          :delay="delay" 
          @end="endGame"
-         />
-         {{ reactionTime }}
-      <Results/>
+         />         
+      <Results
+         :score="score" 
+         v-if="showScore"
+      />
    </div>
 </template>
 
@@ -25,19 +27,21 @@ export default {
       return {
          isPlaying: false,
          delay: null,
-         reactionTime: null,
-
+         score: null,
+         showScore: false
       }
    },
    methods: {
       play() {
          this.delay = 2000 + Math.random() * 5000,
          this.isPlaying = true
+         this.showScore = false
       },
+      // Get custom event from child component
       endGame(reactionTime) {
-         console.log(reactionTime)
-         this.reactionTime = reactionTime
+         this.score = reactionTime
          this.isPlaying = false
+         this.showScore = true
       }
    }
 }

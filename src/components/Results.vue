@@ -1,16 +1,15 @@
 <template>
-   <div>
-
-   </div>
+   <div  >Score: {{ score }} ms </div>
 </template>
 
 <script>
 export default {
-   setup () {
-      
+  props: ['score'],
+  data() {
+   return {
 
-      return {}
    }
+  }
 }
 </script>
 
