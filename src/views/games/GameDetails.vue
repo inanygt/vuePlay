@@ -1,6 +1,7 @@
 <template>
-   <div>
-      <p>The route param is: {{ id }} </p>
+   <div v-if="game">
+      <h1>{{ game.title }}</h1>
+      <div>{{ game.details }}</div>
    </div>
 </template>
 
@@ -8,8 +9,15 @@
    export default {
       data() {
          return {
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            game: null,
          }
+      },
+      mounted() {
+         fetch("http://localhost:3000/games/" + this.id)
+            .then(res => res.json())
+            .then(data => this.game = data)
+            .catch(err => console.log(err.message))
       }
    }
 </script>
