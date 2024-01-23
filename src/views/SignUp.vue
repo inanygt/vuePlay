@@ -39,6 +39,11 @@
             <input type="checkbox" value="on-site" v-model="job">
             <label class="px-2">on site</label>
          </div>
+
+         <div class="mt-10">
+         <label class="pe-2">Skills</label>
+         <input class="border rounded" type="tempSkill" v-model="tempSkill" @keyup="addSkill">
+      </div>
       </form>
 
       <div class="mt-10">
@@ -47,7 +52,17 @@
          <p> Role: {{ role }} </p>
          <p> Terms: {{ terms }} </p>
          <p> job: {{ job }} </p>
+
+         <br/>
+         <br/>
+
+         <h1>Skills</h1>
+         <div v-for="skill in skills" :key="skill">
+            <p> {{ skill }} </p>
+         </div>
       </div>
+
+      
    </div>
 </template>
 
@@ -63,9 +78,19 @@
             role: 'developer',
             terms: false,
             job: [],
+            skills: [],
+            tempSkill: ''
          }
       },
       methods: {
+         addSkill(e) {
+            if (e.key === 'Enter') {
+               if (!this.skills.includes(this.tempSkill)) {
+                  this.skills.push(this.tempSkill)
+               }
+               this.tempSkill = ''
+            }
+         }
       }
    }
 </script>
