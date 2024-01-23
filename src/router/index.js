@@ -31,6 +31,11 @@ const routes = [
       path: '/gamedetails/:id',
       component: GameDetails
    },
+   // Redirect
+   {
+      path: '/all-games',
+      redirect: '/games'
+   }
 ]
 
 const router = createRouter({
