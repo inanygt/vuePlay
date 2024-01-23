@@ -28,8 +28,9 @@ export default {
       },
       stopTimer() {
          clearInterval(this.timer)
-         console.log(this.timer)
          console.log(this.reactionTime)
+         // Custom events
+         this.$emit('end', this.reactionTime)
       }
    },
    // Lifecycle hooks 

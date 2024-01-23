@@ -9,7 +9,9 @@
       <Block
          v-if="isPlaying"
          :delay="delay" 
+         @end="endGame"
          />
+         {{ reactionTime }}
       <Results/>
    </div>
 </template>
@@ -23,12 +25,19 @@ export default {
       return {
          isPlaying: false,
          delay: null,
+         reactionTime: null,
+
       }
    },
    methods: {
       play() {
          this.delay = 2000 + Math.random() * 5000,
          this.isPlaying = true
+      },
+      endGame(reactionTime) {
+         console.log(reactionTime)
+         this.reactionTime = reactionTime
+         this.isPlaying = false
       }
    }
 }
