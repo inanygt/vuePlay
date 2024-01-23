@@ -1,7 +1,14 @@
 <template>
-  <div></div>
+   <div class="firstTeleport"></div>
+   <Basics />
 </template>
 
-<script setup></script>
+<script>
+import Basics from '../components/Basics.vue'
 
-<style lang="scss" scoped></style>
+export default {
+   components: { Basics }
+}
+</script>
+
+<style></style>
