@@ -3,7 +3,9 @@
       <div 
       v-for="game in games" :key="game.id"
       >
+      <RouterLink :to="{ name: 'gamedetails', params: { id: game.id } }">
          <p>{{ game.title }}</p>
+      </RouterLink>
       </div>
    </div>
 </template>
