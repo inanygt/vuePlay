@@ -14,13 +14,16 @@
    export default {
       data() {
          return {
-            games: [
-               {id:1, title: 'Hades'},
-               {id:2, title: 'Spire'},
-            ]
+            games: []
          }
+      },
+      mounted() {
+         fetch("http://localhost:3000/games")
+            .then(res => res.json())
+            .then(data => this.games = data)
+            .catch(err => console.log(err.message))
       }
-   }
+}
 </script>
 
 <style >
