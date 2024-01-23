@@ -6,11 +6,21 @@
 
          <label> Password:</label>
          <input ref="password" type="password" v-model="password">
+
+         <br/>
+         <br/>
+
+         <label>Role:</label>
+         <select v-model="role">
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+         </select>
       </form>
 
       <div class="mt-10">
          <p> Email: {{ email }} </p>
          <p> Password: {{ password }} </p>
+         <p> Role: {{ role }} </p>
       </div>
    </div>
 </template>
@@ -23,7 +33,8 @@
       data() {
          return {
             email: '',
-            password: ''
+            password: '',
+            role: 'developer'
          }
       }
    }
