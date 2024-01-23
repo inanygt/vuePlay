@@ -1,5 +1,5 @@
 <template>
-   <div class="mt-10 m-auto w-11/12">
+   <div class="my-10 m-auto w-11/12">
       <form>
          <label> Email:</label>
          <input ref="email" type="email" v-model="email">
@@ -54,11 +54,12 @@
          <p> job: {{ job }} </p>
 
          <br/>
-         <br/>
 
-         <h1>Skills</h1>
-         <div v-for="skill in skills" :key="skill">
-            <p> {{ skill }} </p>
+         <h1 class="mb-4"> Your Skills</h1>
+         <div class="flex">
+            <div v-for="skill in skills" :key="skill">
+               <div @click="delSkill(skill)" class="bg-green-100 px-4 py-1 cursor-pointer me-2 rounded-xl"> {{ skill }} </div>
+            </div>
          </div>
       </div>
 
@@ -90,6 +91,12 @@
                }
                this.tempSkill = ''
             }
+         },
+         delSkill(skill) {
+            console.log(skill)
+            this.skills = this.skills.filter((item) => {
+               return skill !== item
+            })
          }
       }
    }
