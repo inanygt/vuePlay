@@ -4,7 +4,7 @@
       <button
          @click="play"
          :disabled="isPlaying"
-         :class="{'bg-red-200': isPlaying}"
+         :class="{'bg-red-200 cursor-not-allowed': isPlaying}"
          class="bg-red-400 rounded-lg px-3 py-2 m-2">Play</button>
       <Block
          v-if="isPlaying"
@@ -48,3 +48,4 @@ export default {
 </script>
 
 <style lang="scss" scoped></style>
+ 
