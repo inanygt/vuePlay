@@ -1,11 +1,9 @@
-<script></script>
-
 <template>
    <nav class="w-11/12 m-auto mt-10">
-      <RouterLink
-         to="/"
+      <button
+         @click="goHome"
          class="pe-4 ">Home
-      </RouterLink>
+   </button>
       <RouterLink
          to="timer"
          class="px-4 ">timer
@@ -21,5 +19,15 @@
    </nav>
    <RouterView />
 </template>
+
+<script>
+   export default {
+      methods: {
+         goHome() {
+            this.$router.push({ name: 'home' })
+         }
+      }
+   }
+</script>
 
 <style scoped></style>
