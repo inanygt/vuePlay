@@ -11,8 +11,12 @@
          class="px-4 ">timer
       </RouterLink>
       <RouterLink
-         to="signup"
+         :to="{ name: 'signup' }"
          class="px-4 ">Sign up 
+      </RouterLink>
+       <RouterLink
+         :to="{ name: 'games' }"
+         class="px-4 ">Games 
       </RouterLink>
    </nav>
    <RouterView />
