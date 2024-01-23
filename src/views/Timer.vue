@@ -6,7 +6,10 @@
          :disabled="isPlaying"
          :class="{'bg-red-200': isPlaying}"
          class="bg-red-400 rounded-lg px-3 py-2 m-2">Play</button>
-      <Block v-if="isPlaying"/>   
+      <Block
+         v-if="isPlaying"
+         :delay="delay" 
+         />
       <Results/>
    </div>
 </template>
@@ -26,7 +29,6 @@ export default {
       play() {
          this.delay = 2000 + Math.random() * 5000,
          this.isPlaying = true
-         console.log(this.delay)
       }
    }
 }
