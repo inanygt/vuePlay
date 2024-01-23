@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Timer from '../views/Timer.vue'
+import SignUp from '../views/SignUp.vue'
 
 const routes = [
    {
-      path: '/',
       name: 'home',
+      path: '/',
       component: Home
    },
    {
-      path: '/timer',
       name: 'timer',
+      path: '/timer',
       component: Timer
+   },
+   {
+      name: 'signup',
+      path: '/signup',
+      component: SignUp
    }
 ]
 
