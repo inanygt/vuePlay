@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Timer from '../views/Timer.vue'
 import SignUp from '../views/SignUp.vue'
+import NotFound from '../views/NotFound.vue'
 import Games from '../views/games/Games.vue'
 import GameDetails from '../views/games/GameDetails.vue'
 
@@ -35,6 +36,11 @@ const routes = [
    {
       path: '/all-games',
       redirect: '/games'
+   },
+   // 404 not found 
+   {
+      path: '/:catchAll(.*)',
+      component: NotFound,
    }
 ]
 
