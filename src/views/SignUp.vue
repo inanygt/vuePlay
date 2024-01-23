@@ -1,11 +1,14 @@
 <template>
    <div class="my-10 m-auto w-11/12">
-      <form>
+      <form @submit.prevent="handleForm">
          <label> Email:</label>
          <input ref="email" type="email" v-model="email">
 
-         <label> Password:</label>
-         <input ref="password" type="password" v-model="password">
+         <div>
+            <label> Password:</label>
+            <input ref="password" type="password" v-model="password">
+            <div class="text-red-500 text-sm"> {{ passwordError }} </div>
+         </div>
 
          <br/>
          <br/>
@@ -41,9 +44,13 @@
          </div>
 
          <div class="mt-10">
-         <label class="pe-2">Skills</label>
-         <input class="border rounded" type="tempSkill" v-model="tempSkill" @keyup="addSkill">
-      </div>
+            <label class="pe-2">Skills</label>
+            <input class="border rounded" type="tempSkill" v-model="tempSkill" @keyup="addSkill">
+         </div>
+
+         <div class="mt-5">
+            <button class="bg-orange-300 px-4 py-1 rounded-xl">Submit</button>
+         </div>
       </form>
 
       <div class="mt-10">
@@ -64,6 +71,7 @@
       </div>
 
       
+
    </div>
 </template>
 
@@ -80,7 +88,8 @@
             terms: false,
             job: [],
             skills: [],
-            tempSkill: ''
+            tempSkill: '',
+            passwordError: ''
          }
       },
       methods: {
@@ -93,10 +102,12 @@
             }
          },
          delSkill(skill) {
-            console.log(skill)
             this.skills = this.skills.filter((item) => {
                return skill !== item
             })
+         },
+         handleForm() {
+            this.passwordError = this.password > 6 ? '' : 'The password must be longer than 6 characters'
          }
       }
    }
