@@ -75,7 +75,9 @@
    </div>
 </template>
 
+
 <script>
+
    export default {
       mounted() {
          this.$refs.email.focus();
@@ -106,10 +108,12 @@
                return skill !== item
             })
          },
-         handleForm() {
-            this.passwordError = this.password > 6 ? '' : 'The password must be longer than 6 characters'
-         }
+         // handleForm() {
+         //    console.log(this.email, this.password)
+         //    this.passwordError = this.password > 6 ? '' : 'The password must be longer than 6 characters'
+         // }
       }
+    
    }
 </script>
 

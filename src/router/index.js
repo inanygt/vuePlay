@@ -5,6 +5,7 @@ import SignUp from '../views/SignUp.vue'
 import NotFound from '../views/NotFound.vue'
 import Games from '../views/games/Games.vue'
 import GameDetails from '../views/games/GameDetails.vue'
+import Composition from '../views/Composition.vue'
 
 const routes = [
    {
@@ -41,6 +42,11 @@ const routes = [
    {
       path: '/:catchAll(.*)',
       component: NotFound,
+   },
+   {
+      path: '/composition',
+      name: 'composition',
+      component: Composition
    }
 ]
 

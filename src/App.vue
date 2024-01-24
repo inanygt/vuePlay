@@ -16,6 +16,11 @@
          :to="{ name: 'games' }"
          class="px-4 ">Games 
       </RouterLink>
+      <RouterLink
+         :to="{ name: 'composition'}"
+         class="px-4">
+         Composition Api
+      </RouterLink>
    </nav>
    <RouterView />
 </template>
