@@ -19,7 +19,7 @@
       <RouterLink
          :to="{ name: 'composition'}"
          class="px-4">
-         Composition Api
+         Comp- Api
       </RouterLink>
    </nav>
    <RouterView />
