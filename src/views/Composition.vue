@@ -16,13 +16,14 @@
          {{ name }}
          </div>
       </div>
+      <button @click="handleStopWatch">Stop watch</button>
    </div>
 
   
 </template>
 
 <script >
-import { ref, computed } from 'vue'
+import { ref, computed, watch, watchEffect } from 'vue'
 
 export default {
    setup() {
@@ -38,13 +39,30 @@ export default {
          return names.value.filter((name) => name.includes(search.value) )
       })
 
+      // Watch 
+
+      const stopWatch = watch(search, () => {
+         console.log('watch search')
+      })
+
+     // watcheffect
+
+      const stopWatchEffect = watchEffect(() => {
+         console.log('watcheffect function ran', search.value)
+      })
+
 
       const handleClick = () => {
          name.value = 'Mario'
          age.value++
       }
 
-      return { name, names, search, matchingNames, age, handleClick }
+      const handleStopWatch = () => {
+         stopWatch()
+         stopWatchEffect()
+      }
+
+      return { name, names, search, handleStopWatch, matchingNames, age, handleClick }
    }
 }
 
